@@ -1,0 +1,24 @@
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/header.html') // Adjust path if header.html is in a subfolder, e.g., '/partials/header.html'
+        .then(response => {
+            if (!response.ok) {
+                // Log an error if the file isn't found or there's a network issue
+                console.error(`Error loading header: HTTP status ${response.status}`);
+                throw new Error('Network response was not ok.');
+            }
+            return response.text();
+        })
+        .then(html => {
+            const headerPlaceholder = document.getElementById('main-header');
+            if (headerPlaceholder) {
+                headerPlaceholder.innerHTML = html;
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            const headerPlaceholder = document.getElementById('main-header');
+            if (headerPlaceholder) {
+                headerPlaceholder.innerHTML = '<p style="color: red; text-align: center;">Failed to load navigation.</p>';
+            }
+        });
+});

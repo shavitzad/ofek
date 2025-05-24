@@ -1,0 +1,397 @@
+/* General Body and Root Variables */
+:root {
+    --pastel-blue: #B0E0E6; /* Powder Blue */
+    --pastel-green: #C1E1C1; /* Mint Green */
+    --pastel-yellow: #FFFACD; /* Lemon Chiffon */
+    --pastel-pink: #FFDAB9; /* Peach Puff */
+    --pastel-purple: #E6E6FA; /* Lavender */
+    --text-dark: #333;
+    --text-light: #555;
+    --background-light: #F8F8F8;
+    --header-bg: #FFFFFF;
+    --shadow-light: rgba(0,0,0,0.1);
+    --shadow-medium: rgba(0,0,0,0.15);
+    --shadow-strong: rgba(0,0,0,0.2);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Container for consistent content width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Section */
+header {
+    background-color: var(--header-bg);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Main Navbar Flex Container */
+.navbar {
+    display: flex;
+    /* Keeps the "logo-group" on the right and "nav" on the left */
+    flex-direction: row-reverse;
+    justify-content: space-between; /* Pushes them to opposite ends */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Styles for the combined logo group (text + image) */
+.logo-group {
+    display: flex; /* Make this group itself a flex container */
+    align-items: center; /* Vertically align items (text and image) */
+    gap: 10px; /* Space between the text and the image */
+    flex-direction: row; /* Ensure image is to the right of text (default, but explicit for clarity) */
+}
+
+/* Styles for the text part of the logo */
+.logo-text {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--pastel-blue);
+    text-decoration: none;
+    padding: 5px 0; /* Consistent padding */
+    white-space: nowrap; /* Prevent text from wrapping onto multiple lines */
+}
+
+/* Styles for the image link */
+.logo-image-link {
+    display: block; /* Ensure the link behaves as a block to contain the image */
+}
+
+/* Styles for the image itself */
+.logo-image-link img {
+    height: 50px; /* Adjusted: Made the logo much smaller */
+    width: auto; /* This maintains the aspect ratio of your logo */
+    display: block; /* Removes any extra space below the image */
+}
+
+
+/* Navigation Links (direction remains RTL for Hebrew) */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    direction: rtl; /* Set text direction to right-to-left for Hebrew */
+}
+
+.nav-links li {
+    position: relative;
+    margin-right: 30px; /* Use margin-right for RTL spacing */
+    margin-left: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.nav-links a:hover {
+    color: var(--pastel-blue);
+}
+
+/* Dropdown Menu for Subjects */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--header-bg);
+    box-shadow: 0 5px 15px var(--shadow-light);
+    list-style: none;
+    padding: 10px 0;
+    top: 100%; /* ADDED: Positions it directly below the parent li */
+    min-width: 180px;
+    border-radius: 8px;
+    right: 0; /* Align dropdown to the right of the parent link */
+    left: auto;
+    direction: rtl; /* Set text direction to right-to-left for dropdown items */
+    text-align: right; /* Align text to the right within dropdown */
+}
+
+.nav-links li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+    color: var(--text-dark);
+    border-radius: 0;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--pastel-blue);
+    color: white;
+}
+
+/* Hero Section */
+.hero-section, .page-hero {
+    background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-green));
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+.hero-section h1, .page-hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px var(--shadow-strong);
+}
+
+.hero-section p, .page-hero p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Section Headings */
+.about-section h2, .subjects-section h2, .gallery-section h2, .content-section h2 {
+    font-size: 2.5em;
+    color: var(--pastel-blue);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after, .subjects-section h2::after, .gallery-section h2::after, .content-section h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--pastel-green);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* About Section */
+.about-section, .content-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Subjects Section */
+.subjects-section {
+    padding: 60px 0;
+    background-color: var(--pastel-yellow);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Subject Card Styling */
+.subject-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 280px;
+}
+
+.subject-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+.subject-card i {
+    font-size: 3.5em;
+    color: var(--pastel-blue);
+    margin-bottom: 20px;
+}
+
+.subject-card h3 {
+    font-size: 1.8em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.subject-card p {
+    color: var(--text-light);
+    font-size: 0.95em;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.subject-card a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--pastel-pink);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.subject-card a:hover {
+    background-color: #FFC0CB;
+    transform: translateY(-2px);
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.gallery-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-dark);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+    }
+
+    .logo-group {
+        flex-direction: column; /* Stack logo text and image on small screens */
+        text-align: center;
+        gap: 5px;
+        margin-bottom: 15px; /* Add some space when stacked */
+    }
+
+    .logo-text {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    .logo-image-link img {
+        height: 60px; /* Smaller logo on mobile */
+		width: auto;
+		display: block; /* Removes any extra space below the image */
+    }
+
+    .nav-links {
+        margin-top: 20px;
+        flex-direction: column; /* Stack links vertically */
+        width: 100%;
+        text-align: center;
+        direction: rtl; /* Apply RTL to stacked links */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        direction: rtl;
+        text-align: right; /* Align text right on small screens */
+    }
+
+    .hero-section h1, .page-hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p, .page-hero p {
+        font-size: 1em;
+    }
+
+    .about-section h2, .subjects-section h2, .gallery-section h2, .content-section h2 {
+        font-size: 2em;
+    }
+
+    .subjects-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.2em; /* Even smaller text on very small screens */
+    }
+
+    .hero-section, .page-hero {
+        padding: 60px 0;
+    }
+
+    .hero-section h1, .page-hero h1 {
+        font-size: 2em;
+    }
+}
