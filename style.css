@@ -120,7 +120,7 @@ header {
     box-shadow: 0 5px 15px var(--shadow-light);
     list-style: none;
     padding: 10px 0;
-    top: 100%; /* ADDED: Positions it directly below the parent li */
+    margin-top: 10px;
     min-width: 180px;
     border-radius: 8px;
     right: 0; /* Align dropdown to the right of the parent link */
