@@ -1,7 +1,7 @@
 /* General Body and Root Variables */
 :root {
-    --pastel-blue: #B0E0E6; /* Powder Blue */
-    --pastel-green: #C1E1C1; /* Mint Green */
+    --pastel-blue: #3BAF7A; /* Powder Blue */
+    --pastel-green: #4A90E2; /* Mint Green */
     --pastel-yellow: #FFFACD; /* Lemon Chiffon */
     --pastel-pink: #FFDAB9; /* Peach Puff */
     --pastel-purple: #E6E6FA; /* Lavender */
@@ -34,7 +34,7 @@ body {
 /* Header Section */
 header {
     background-color: var(--header-bg);
-    padding: 20px 0;
+    padding: 10px 0;
     box-shadow: 0 2px 5px var(--shadow-light);
     position: sticky;
     top: 0;
@@ -154,7 +154,7 @@ header {
 .hero-section, .page-hero {
     background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-green));
     color: white;
-    padding: 100px 0;
+    padding: 30px 0;
     text-align: center;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
