@@ -305,6 +305,98 @@ header {
     object-fit: cover;
     display: block;
 }
+/* עיצוב כפתורי המשאבים - מותאם ל-Theme של חיבו"ק */
+.links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.resource-btn {
+    display: flex;
+    align-items: center;
+    padding: 18px 25px;
+    text-decoration: none !important;
+    color: #333 !important; /* טקסט כהה יותר לקריאות על רקע פסטל */
+    border-radius: 15px;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05); /* צל עדין מאוד */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* אייקון מימין לטקסט */
+.resource-btn i { 
+    margin-left: 15px; 
+    font-size: 1.4rem; 
+    opacity: 0.8;
+}
+
+/* צבעי פסטל מה-Theme שלך */
+.presentation { 
+    background-color: #E6F4EA; /* ירוק פסטל עדין מאוד */
+    border-right: 6px solid #3BAF7A; /* פס הדגשה בצבע המותג */
+}
+
+.worksheet { 
+    background-color: #E8F0FE; /* כחול פסטל עדין */
+    border-right: 6px solid #4A90E2; 
+}
+
+.lesson-plan { 
+    background-color: #FFFDE7; /* צהוב פסטל עדין */
+    border-right: 6px solid #FBC02D; 
+}
+
+/* אפקט מעבר עכבר עדין */
+.resource-btn:hover { 
+    transform: translateX(-5px); /* תנועה קלה הצידה במקום למעלה */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #ffffff; /* הלבנה קלה ב-Hover */
+}
+
+/* סידור הגריד של הפעילויות */
+.activities-grid {
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* עיצוב הכרטיס העגול */
+.circle-card {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--main-blue); /* השתמשי במשתנה הצבע שלך */
+    transition: transform 0.3s ease;
+}
+
+/* יצירת העיגול */
+.circle-image-wrapper {
+    width: 200px;  /* ניתן לשנות את הגודל לפי הצורך */
+    height: 200px;
+    border-radius: 50%; /* זה מה שהופך את זה לעיגול */
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 5px solid #f0f0f0; /* מסגרת עדינה */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.circle-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* שומר על יחס התמונה בתוך העיגול */
+}
+
+/* אפקט במעבר עכבר */
+.circle-card:hover {
+    transform: translateY(-10px);
+}
+
+.circle-card h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
 
 /* Footer */
 footer {

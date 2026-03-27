@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חומרי למידה: אבולוציה</title>
+    
+    <!-- קישור לספריית האייקונים - חובה לחיבור אינטרנט כדי לראותם -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+
+    <style>
+        /* הגדרות כלליות */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* כותרת עליונה עם ה-Gradient מהתמונה שלך */
+        .main-header {
+            background: linear-gradient(90deg, #43a887 0%, #4a90e2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom-left-radius: 50% 8%;
+            border-bottom-right-radius: 50% 8%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .main-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .main-header p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* פריסת העמודות - כפתורים מימין, טקסט משמאל */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: row-reverse; /* הופך צדדים לעברית */
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* תפריט הכפתורים */
+        .sidebar {
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .subject-card-btn {
+            background: white;
+            border-radius: 50px; /* עיצוב מעוגל כמו בתמונה */
+            margin-bottom: 20px;
+            padding: 18px 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .subject-card-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        /* פסים צבעוניים בצד הכפתור */
+        .green-border { border-right: 10px solid #43a887; }
+        .blue-border { border-right: 10px solid #4a90e2; }
+        .orange-border { border-right: 10px solid #f5a623; }
+
+        /* אזור התוכן המרכזי */
+        .content-area {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            min-height: 400px;
+        }
+
+        .content-area h2 {
+            color: #4a90e2;
+            margin-top: 0;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .content-area p {
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* פוטר עם רשתות חברתיות */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 40px;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 38px;
+            margin: 0 15px;
+            color: #4a90e2;
+            transition: transform 0.3s, color 0.3s;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: #43a887;
+            transform: scale(1.2);
+        }
+
+        .back-link {
+            display: block;
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* התאמה לטלפונים חכמים */
+        @media (max-width: 850px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .sidebar {
+                width: 100%;
+                max-width: 400px;
+            }
+            .content-area {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <h1>חומרי למידה: אבולוציה</h1>
+    <p>חומרים מקוריים בנושא אבולוציה וחשיבה מדעית</p>
+</header>
+
+<div class="container">
+    <!-- הכפתורים בצד ימין -->
+    <aside class="sidebar">
+        <a href="#" class="subject-card-btn green-border">מצגת מבוא לאבולוציה</a>
+        <a href="#" class="subject-card-btn blue-border">דף עבודה - הברירה הטבעית</a>
+        <a href="#" class="subject-card-btn orange-border">מערך שיעור אינטראקטיבי</a>
+    </aside>
+
+    <!-- הטקסט המרכזי משמאל -->
+    <main class="content-area">
+        <h2>מהלך הפעילות</h2>
+        <p>כאן תוכלו לכתוב את כל התוכן שיוצג משמאל לכפתורים. המבנה הזה מאפשר לכם להשאיר את הכפתורים זמינים לניווט מהיר בזמן שהגולש קורא את הטקסט.</p>
+        <p>ניתן להוסיף רשימות:</p>
+        <ul>
+            <li>שלב ראשון: פתיחה והסבר על המושג.</li>
+            <li>שלב שני: צפייה במצגת.</li>
+            <li>שלב שלישי: עבודה בקבוצות על דף העבודה.</li>
+        </ul>
+    </main>
+</div>
+
+<footer>
+    <div class="social-icons">
+        <!-- קישורי רשתות חברתיות עם האייקונים של Font Awesome -->
+        <a href="https://www.facebook.com" class="fa-brands fa-facebook" target="_blank"></a>
+        <a href="https://www.instagram.com" class="fa-brands fa-instagram" target="_blank"></a>
+        <a href="https://chat.whatsapp.com" class="fa-brands fa-whatsapp" target="_blank"></a>
+    </div>
+    <a href="../index.html" class="back-link">← חזרה לדף הבית</a>
+</footer>
+
+</body>
+</html>
