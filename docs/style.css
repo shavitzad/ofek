@@ -149,6 +149,70 @@ header {
     background-color: var(--pastel-blue);
     color: white;
 }
+/* עיצוב כללי לטקסט */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f9f9f9;
+}
+.contact-info {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.phone-link {
+    color: #48b1bf; /* הצבע הטורקיז מהכותרת שלך */
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.phone-link:hover {
+    color: #06beb6; /* משתנה מעט במעבר עכבר */
+    text-decoration: underline;
+}
+
+.phone-link i {
+    margin-left: 5px; /* רווח קטן בין האייקון לשם */
+}
+
+/* מיכל לערכים - סידור בשורה */
+.values-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* עיצוב כל כרטיס ערך */
+.value-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-bottom: 4px solid #48b1bf; /* צבע מהגרדיאנט שלך */
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-bottom-color: #06beb6; /* הצבע השני בגרדיאנט */
+}
+
+/* הדגשת משפטי הנעה לפעולה */
+.highlight-text {
+    font-weight: bold;
+    color: #2c7a7b;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 40px 0;
+}
 
 /* Hero Section */
 .hero-section, .page-hero {
@@ -409,6 +473,32 @@ footer {
     border-top-right-radius: 20px;
 }
 
+/* וואטסאפ - ירוק */
+.icon-whatsapp {
+    color: #25D366;
+    text-decoration: none;
+    font-size: 24px; /* גודל האייקון */
+}
+
+/* פייסבוק - כחול */
+.icon-facebook {
+    color: #1877F2;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* אינסטגרם - מעבר צבעים (גרדיאנט) */
+.icon-instagram {
+    color: #E4405F; /* צבע גיבוי למקרה שהגרדיאנט לא עובד */
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* בונוס: אפקט מעבר עכבר (Hover) */
+.fa-brands:hover {
+    opacity: 0.8;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar {
@@ -472,6 +562,8 @@ footer {
     .subjects-grid, .gallery-grid {
         grid-template-columns: 1fr;
     }
+	
+	
 }
 
 @media (max-width: 480px) {
