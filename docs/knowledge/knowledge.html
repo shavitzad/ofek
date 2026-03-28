@@ -11,12 +11,14 @@
 <body>
     <header>
         <div class="container navbar">
-            <div class="logo-group">
-			<a href="index.html" class="logo-text">חיבו"ק</a>
-			<a href="index.html" class="logo-image-link">
-				<img src="../logo.png" alt="חיבו"ק">
-			</a>
+			<div class="logo-group">
+				<span class="logo-text">חיבו"ק</span>
+				<div class="logo-image-link">
+					<img src="../logo.png" alt="Logo">
+				</div>
 			</div>
+			<!-- כפתור ההמבורגר - ודאי שהוא בתוך ה-navbar -->
+			<button class="hamburger" onclick="toggleMenu()">☰</button>
             <nav>
                 <ul class="nav-links">
                     <li><a href="../index.html">דף הבית</a></li>
@@ -24,19 +26,18 @@
                     <li class="dropdown">
                         <a href="#">תחומי פעילות <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../economy/economy.html">כלכלה</a></li>
-                            <li><a href="../education/education.html">חינוך</a></li>
                             <li><a href="../culture/culture.html">תרבות</a></li>
-                            
+                            <li><a href="../education/education.html">חינוך</a../></li>
+                            <li><a href="../economy/economy.html">כלכלה</a></li>
                         </ul>
                     </li>
-                    <li><a href="../activities/activities.html">אירועים קרובים</a></li>
+                    <li><a href="activities/activities.html">אירועים</a></li>
                     <li class="dropdown">
 						<a href="#">מאגר מידע <i class="fas fa-chevron-down"></i></a>
 						<ul class="dropdown-menu">	
-							<li><a href="../knowledge/hibuk_original.html">תכנים מקוריים של חיבו"ק</a></li>
+							<li><a href="../knowledge/hibuk_original.html">תכנים להורדה</a></li>
                             <li><a href="../knowledge/knowledge.html">הורה מורה</a></li>
-                            <li><a href="../knowledge/gefen.html">תוכניות גפן</a></li>
+							<li><a href="../knowledge/gefen.html">תוכניות גפן</a></li>
                             <li><a href="../knowledge/knowledge.html">העשרה</a></li>
                             <li><a href="../knowledge/books.html">ספרים מומלצים</a></li>
                             <li><a href="../knowledge/knowledge.html">הרצאות</a></li>
@@ -46,7 +47,6 @@
 					<li><a href="https://links.payboxapp.com/yHVGMlAroZb">תירמו לנו !</a></li>
                 </ul>
             </nav>
-        </div>
         </div>
     </header>
 

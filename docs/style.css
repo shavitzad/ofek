@@ -509,25 +509,24 @@ footer {
 @media (max-width: 768px) {
     /* 1. Navbar & Logo */
     .navbar {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 15px;
+        display: flex !important;
+        flex-direction: row-reverse !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
     }
     .logo-group { display: flex; align-items: center; gap: 8px; }
     .logo-text { font-size: 1.2rem !important; }
     .logo-image-link img { height: 35px !important; }
 
-    /* 2. Hamburger Menu */
+    /* 2. Hamburger & Main Nav */
     .hamburger {
-        display: block;
+        display: block !important;
         background: none;
         border: none;
         font-size: 30px;
         cursor: pointer;
         color: var(--pastel-blue);
-        padding: 0;
     }
     nav {
         display: none;
@@ -539,67 +538,46 @@ footer {
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         z-index: 1001;
     }
-    .nav-open nav { display: block; }
-    .nav-links { flex-direction: column; padding: 20px; }
-    .nav-links li { margin: 10px 0; width: 100%; text-align: right; }
+    .nav-open nav { display: block !important; }
+    .nav-links { flex-direction: column !important; padding: 10px 20px !important; }
+    .nav-links li { margin: 5px 0; width: 100%; text-align: right; position: relative; }
+
+    /* --- התיקון החדש לתפריט הנפתח (Dropdown) --- */
+    .dropdown-menu {
+        position: static !important; /* גורם לו להיפתח למטה ולא הצידה */
+        display: none;
+        width: 100% !important;
+        box-shadow: none !important;
+        padding-right: 20px !important; /* כניסה פנימה כדי להראות היררכיה */
+        background-color: #f9f9f9 !important;
+        border-right: 2px solid var(--pastel-blue); /* קו סימון בצד */
+    }
+    .nav-links li:hover .dropdown-menu {
+        display: block !important;
+    }
+    .dropdown-menu li a {
+        white-space: normal !important; /* מאפשר לטקסט ארוך לרדת שורה */
+        font-size: 0.9rem !important;
+        padding: 8px 0 !important;
+    }
 
     /* 3. Hero Section (Blue Part) */
-    .hero-section, .page-hero {
-        padding: 15px 10px !important;
-        margin-bottom: 20px;
-    }
-    .hero-section h1, .page-hero h1 {
-        font-size: 1.25rem !important;
-        line-height: 1.2;
-    }
+    .hero-section, .page-hero { padding: 15px 10px !important; margin-bottom: 20px; }
+    .hero-section h1, .page-hero h1 { font-size: 1.25rem !important; line-height: 1.2; }
     .hero-section p, .page-hero p { font-size: 0.9rem !important; }
 
     /* 4. About Section */
     .about-section, .content-section { padding: 20px 0 !important; }
-    .about-section h2 { font-size: 1.6rem !important; margin-top: 0 !important; margin-bottom: 15px !important; }
-    .about-section h2::after { width: 50px !important; bottom: -5px !important; }
-    .about-section p, .content-section p {
-        font-size: 1rem !important;
-        line-height: 1.5 !important;
-        padding: 0 20px !important;
-        text-align: center;
-    }
+    .about-section h2 { font-size: 1.6rem !important; }
+    .about-section p, .content-section p { font-size: 1rem !important; padding: 0 20px !important; text-align: center; }
 
-    /* 5. Subjects Section & Cards (The updated part) */
-    .subjects-section { padding: 20px 10px !important; }
-    .subjects-section h2 { font-size: 1.6rem !important; }
-    
-    .subjects-grid {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        gap: 5px !important;
-        margin-top: 15px !important;
-    }
-
-    .subject-card {
-        flex: 1 !important;
-        min-width: 0 !important;
-        padding: 8px 4px !important; /* כיווץ החלק הלבן */
-        min-height: 130px !important; /* גובה קטן יותר */
-        border-radius: 12px !important;
-    }
-
-    .subject-card i { font-size: 1.4em !important; margin-bottom: 5px !important; }
-    .subject-card h3 { font-size: 0.85rem !important; margin-bottom: 8px !important; }
+    /* 5. Subjects Section & Cards */
+    .subjects-grid { display: flex !important; flex-direction: row !important; gap: 5px !important; margin-top: 15px !important; }
+    .subject-card { flex: 1 !important; min-width: 0 !important; padding: 8px 4px !important; min-height: 130px !important; border-radius: 12px !important; }
+    .subject-card i { font-size: 1.4em !important; }
+    .subject-card h3 { font-size: 0.85rem !important; }
     .subject-card p { display: none !important; }
-
-    /* עיצוב כפתור "להמשך קריאה" */
-    .subject-card a {
-        padding: 4px 5px !important;
-        font-size: 0.65rem !important;
-        background-color: #FFDAB9 !important; /* צבע Peach */
-        color: #333 !important; /* טקסט כהה לקריאות */
-        border-radius: 10px !important;
-        width: 90% !important;
-        text-align: center;
-        box-shadow: none !important;
-    }
+    .subject-card a { padding: 4px 5px !important; font-size: 0.65rem !important; background-color: #FFDAB9 !important; color: #333 !important; border-radius: 10px !important; width: 90% !important; text-align: center; }
 }
 
 @media (max-width: 480px) {
