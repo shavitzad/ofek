@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
     <header>
         <div class="container navbar">
 			<div class="logo-group">
-			<a href="index.html" class="logo-text">חיבו"ק</a>
-			<a href="index.html" class="logo-image-link">
-				<img src="logo.png" alt="אופק קהילתי">
-			</a>
+				<span class="logo-text">חיבו"ק</span>
+				<div class="logo-image-link">
+					<img src="logo.png" alt="Logo">
+				</div>
 			</div>
+			<!-- כפתור ההמבורגר - ודאי שהוא בתוך ה-navbar -->
+			<button class="hamburger" onclick="toggleMenu()">☰</button>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">דף הבית</a></li>
@@ -58,10 +61,7 @@
         <section class="about-section">
             <div class="container">
                 <h2>עלינו</h2>
-				<p> חיבו"ק הוקמה ב 2025 מתוך רצון לייצר</p>
-                <p> קהילתיות ויוזמות חינוכיות וחברתיות מתוך ערכים משותפים</p>
-				<p> אנו מאמינים בכוחם של פעולה קולקטיבית וחוויות משותפות.</p>
-				<p>הצטרפו אלינו בעיצוב קהילה שדואגת, מחדשת ומעוררת השראה.</p>
+				<p> חיבו"ק הוקמה ב 2025 מתוך רצון לייצר קהילתיות ויוזמות חינוכיות וחברתיות מתוך ערכים משותפים. אנו מאמינים בכוחם של פעולה קולקטיבית וחוויות משותפות.</p>
             </div>
         </section>
 
@@ -132,5 +132,6 @@
             <p>Contact us: info@ourcommunity.org</p>
         </div>
     </footer>
+	<script src="script.js"></script>
 </body>
 </html>

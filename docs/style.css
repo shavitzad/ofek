@@ -178,6 +178,12 @@ body {
 .phone-link i {
     margin-left: 5px; /* רווח קטן בין האייקון לשם */
 }
+/* עיצוב למסכים קטנים (עד 768 פיקסלים) */
+
+.navbar {
+  height: auto; /* מאפשר לגובה להשתנות לפי התוכן */
+  min-height: 60px; /* גובה מינימלי סביר ללוגו וכפתור תפריט */
+}
 
 /* מיכל לערכים - סידור בשורה */
 .values-container {
@@ -499,71 +505,101 @@ footer {
     opacity: 0.8;
 }
 
-/* Responsive Adjustments */
+/* --- הוספי את זה בסוף קובץ ה-CSS שלך --- */
 @media (max-width: 768px) {
+    /* 1. Navbar & Logo */
     .navbar {
-        flex-direction: column; /* Stack items vertically on small screens */
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
         align-items: center;
+        padding: 10px 15px;
     }
+    .logo-group { display: flex; align-items: center; gap: 8px; }
+    .logo-text { font-size: 1.2rem !important; }
+    .logo-image-link img { height: 35px !important; }
 
-    .logo-group {
-        flex-direction: column; /* Stack logo text and image on small screens */
-        text-align: center;
-        gap: 5px;
-        margin-bottom: 15px; /* Add some space when stacked */
+    /* 2. Hamburger Menu */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        color: var(--pastel-blue);
+        padding: 0;
     }
-
-    .logo-text {
-        font-size: 1.5em; /* Adjust font size for smaller screens */
-    }
-
-    .logo-image-link img {
-        height: 60px; /* Smaller logo on mobile */
-		width: auto;
-		display: block; /* Removes any extra space below the image */
-    }
-
-    .nav-links {
-        margin-top: 20px;
-        flex-direction: column; /* Stack links vertically */
+    nav {
+        display: none;
         width: 100%;
-        text-align: center;
-        direction: rtl; /* Apply RTL to stacked links */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 1001;
     }
+    .nav-open nav { display: block; }
+    .nav-links { flex-direction: column; padding: 20px; }
+    .nav-links li { margin: 10px 0; width: 100%; text-align: right; }
 
-    .nav-links li {
-        margin: 10px 0;
-        width: 100%;
+    /* 3. Hero Section (Blue Part) */
+    .hero-section, .page-hero {
+        padding: 15px 10px !important;
+        margin-bottom: 20px;
     }
-
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        border-radius: 0;
-        margin-top: 0;
-        background-color: rgba(255, 255, 255, 0.9);
-        direction: rtl;
-        text-align: right; /* Align text right on small screens */
-    }
-
     .hero-section h1, .page-hero h1 {
-        font-size: 2.5em;
+        font-size: 1.25rem !important;
+        line-height: 1.2;
+    }
+    .hero-section p, .page-hero p { font-size: 0.9rem !important; }
+
+    /* 4. About Section */
+    .about-section, .content-section { padding: 20px 0 !important; }
+    .about-section h2 { font-size: 1.6rem !important; margin-top: 0 !important; margin-bottom: 15px !important; }
+    .about-section h2::after { width: 50px !important; bottom: -5px !important; }
+    .about-section p, .content-section p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        padding: 0 20px !important;
+        text-align: center;
     }
 
-    .hero-section p, .page-hero p {
-        font-size: 1em;
+    /* 5. Subjects Section & Cards (The updated part) */
+    .subjects-section { padding: 20px 10px !important; }
+    .subjects-section h2 { font-size: 1.6rem !important; }
+    
+    .subjects-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        margin-top: 15px !important;
     }
 
-    .about-section h2, .subjects-section h2, .gallery-section h2, .content-section h2 {
-        font-size: 2em;
+    .subject-card {
+        flex: 1 !important;
+        min-width: 0 !important;
+        padding: 8px 4px !important; /* כיווץ החלק הלבן */
+        min-height: 130px !important; /* גובה קטן יותר */
+        border-radius: 12px !important;
     }
 
-    .subjects-grid, .gallery-grid {
-        grid-template-columns: 1fr;
+    .subject-card i { font-size: 1.4em !important; margin-bottom: 5px !important; }
+    .subject-card h3 { font-size: 0.85rem !important; margin-bottom: 8px !important; }
+    .subject-card p { display: none !important; }
+
+    /* עיצוב כפתור "להמשך קריאה" */
+    .subject-card a {
+        padding: 4px 5px !important;
+        font-size: 0.65rem !important;
+        background-color: #FFDAB9 !important; /* צבע Peach */
+        color: #333 !important; /* טקסט כהה לקריאות */
+        border-radius: 10px !important;
+        width: 90% !important;
+        text-align: center;
+        box-shadow: none !important;
     }
-	
-	
 }
 
 @media (max-width: 480px) {

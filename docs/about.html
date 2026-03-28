@@ -2,20 +2,22 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>חיבו"ק</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
         <div class="container navbar">
 			<div class="logo-group">
-			<a href="index.html" class="logo-text">חיבו"ק</a>
-			<a href="index.html" class="logo-image-link">
-				<img src="logo.png" alt="אופק קהילתי">
-			</a>
+				<span class="logo-text">חיבו"ק</span>
+				<div class="logo-image-link">
+					<img src="logo.png" alt="Logo">
+				</div>
 			</div>
+			<!-- כפתור ההמבורגר - ודאי שהוא בתוך ה-navbar -->
+			<button class="hamburger" onclick="toggleMenu()">☰</button>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">דף הבית</a></li>
@@ -110,5 +112,6 @@
 			<a href="index.html" class="back-link">← חזרה לדף הבית</a>
         </div>
     </footer>
+	<script src="script.js"></script>
 </body>
 </html>
